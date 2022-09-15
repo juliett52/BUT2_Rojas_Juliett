@@ -12,14 +12,14 @@ int main(void) {
 
     //Configuration de séentres sorties
     InitIO();
-    
+
     InitTimer1();
     InitTimer23();
 
     LED_BLANCHE = 1;
     LED_BLEUE = 1;
     LED_ORANGE = 1;
-    
+
     InitPWM();
     
     //Boucle Principale
