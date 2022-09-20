@@ -5,6 +5,7 @@
 #include "IO.h"
 #include "PWM.h"
 #include "timer.h"
+#include "ADC.h"
 
 int main(void) {
     //Initialisation de l?oscillateur
@@ -22,10 +23,13 @@ int main(void) {
 
     InitPWM();
     
+    InitADC1();
+    
     //Boucle Principale
     while (1) {
-        LED_BLANCHE = !LED_BLANCHE;
-        LED_BLEUE = !LED_BLEUE;
+        ADCGetResult();
+        ADCIsConversionFinished();
+        ADCClearConversionFinishedFlag();
     }
 
     //fin main
